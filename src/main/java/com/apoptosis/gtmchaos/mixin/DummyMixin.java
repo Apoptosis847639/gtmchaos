@@ -1,4 +1,4 @@
-package com.example.examplemod.mixin;
+package com.apoptosis.gtmchaos.mixin;
 
 import net.minecraft.world.level.levelgen.WorldgenRandom;
 

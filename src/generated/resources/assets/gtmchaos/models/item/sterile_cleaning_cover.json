@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "gtmchaos:item/sterile_cleaning_cover"
+  }
+}

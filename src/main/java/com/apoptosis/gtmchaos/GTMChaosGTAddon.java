@@ -1,6 +1,8 @@
 package com.apoptosis.gtmchaos;
 
 import com.apoptosis.gtmchaos.common.covers.GTMChaosCovers;
+import com.apoptosis.gtmchaos.data.recipes.AssemblerRecipes;
+import com.apoptosis.gtmchaos.data.recipes.CraftingTableRecipies;
 import com.apoptosis.gtmchaos.registrate.GTMChaosRegistrate;
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
@@ -34,7 +36,8 @@ public class GTMChaosGTAddon implements IGTAddon {
 
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
-        // CustomRecipes.init(provider);
+        CraftingTableRecipies.init(provider);
+        AssemblerRecipes.init(provider);
     }
 
     @Override

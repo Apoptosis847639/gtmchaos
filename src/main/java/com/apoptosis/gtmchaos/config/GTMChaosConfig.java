@@ -29,7 +29,7 @@ public class GTMChaosConfig {
         @Configurable.Comment({" Enables Cleaning Cover "})
         public boolean cleaningCover = true;
         @Configurable
-        @Configurable.Comment({" Enables Sterile Cleaning Cover(Requires GTMUtils) "})
+        @Configurable.Comment({" Enables Sterile Cleaning Cover(Requires GTMUtils) it won't have a recipe "})
         public boolean sterileCleaningCover = true;
     }
 }

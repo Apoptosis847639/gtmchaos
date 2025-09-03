@@ -154,6 +154,12 @@ dependencies {
     modImplementation("com.tterrag.registrate:Registrate:${registrate_version}")
     modImplementation("dev.toma.configuration:configuration-forge-${minecraft_version}:${configuration_version}")
 
+    //GTM Utils
+    modRuntimeOnly("curse.maven:gregtech-modern-utilities-1235020:6913730")
+
+    //KJS
+    //modImplementation("curse.maven:kubejs-238086:5853326")
+
     // lombok
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'

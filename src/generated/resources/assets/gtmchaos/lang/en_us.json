@@ -1,4 +1,6 @@
 {
   "block.gtmchaos.cobblestone_bus": "Infinite Cobblestone Bus",
-  "gtmchaos.machine.cobblestone_bus.tooltip": "Gives your multiblocks infinite cobblestone"
+  "gtmchaos.machine.cobblestone_bus.tooltip": "Gives your multiblocks infinite cobblestone",
+  "item.gtmchaos.cleaning_cover": "Cleaning Cover",
+  "item.gtmchaos.sterile_cleaning_cover": "Sterilizing Cleaning Cover"
 }

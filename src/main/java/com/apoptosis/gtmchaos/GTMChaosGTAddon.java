@@ -1,5 +1,6 @@
 package com.apoptosis.gtmchaos;
 
+import com.apoptosis.gtmchaos.registrate.GTMChaosRegistrate;
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
@@ -14,7 +15,7 @@ public class GTMChaosGTAddon implements IGTAddon {
 
     @Override
     public GTRegistrate getRegistrate() {
-        return GTMChaosMod.EXAMPLE_REGISTRATE;
+        return GTMChaosRegistrate.REGISTRATE;
     }
 
     @Override

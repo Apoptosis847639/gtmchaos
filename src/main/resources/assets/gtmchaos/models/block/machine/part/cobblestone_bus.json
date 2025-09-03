@@ -1,0 +1,7 @@
+{
+  "parent": "gtceu:block/overlay/2_layer/front",
+  "textures": {
+    "overlay": "gtmchaos:block/machine/part/cobblestone_bus",
+    "overlay_2": "gtmchaos:block/machine/part/cobblestone_bus"
+  }
+}

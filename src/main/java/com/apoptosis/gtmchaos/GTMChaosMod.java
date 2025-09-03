@@ -1,5 +1,9 @@
 package com.apoptosis.gtmchaos;
 
+import com.apoptosis.gtmchaos.common.machine.GTMChaosMachine;
+import com.apoptosis.gtmchaos.config.GTMChaosConfig;
+import com.apoptosis.gtmchaos.data.GTMChaosData;
+import com.apoptosis.gtmchaos.registrate.GTMChaosRegistrate;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
@@ -9,6 +13,7 @@ import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import com.gregtechceu.gtceu.api.sound.SoundEntry;
 
+import com.gregtechceu.gtceu.common.data.GTItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -28,9 +33,10 @@ public class GTMChaosMod {
 
     public static final String MOD_ID = "gtmchaos";
     public static final Logger LOGGER = LogManager.getLogger();
-    public static GTRegistrate EXAMPLE_REGISTRATE = GTRegistrate.create(GTMChaosMod.MOD_ID);
 
     public GTMChaosMod() {
+        GTMChaosConfig.init();
+        GTMChaosData.init();
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
@@ -48,14 +54,13 @@ public class GTMChaosMod {
         // If we want to use annotations to register event listeners,
         // we need to register our object like this!
         MinecraftForge.EVENT_BUS.register(this);
-
-        EXAMPLE_REGISTRATE.registerRegistrate();
+        GTMChaosRegistrate.init();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             LOGGER.info("Hello from common setup! This is *after* registries are done, so we can do this:");
-            LOGGER.info("Look, I found a {}!", Items.DIAMOND);
+            LOGGER.info("Look, I found a {}!", GTItems.SYSTEM_ON_CHIP);
         });
     }
 
@@ -120,7 +125,7 @@ public class GTMChaosMod {
      * @param event
      */
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
-        // CustomMachines.init();
+        GTMChaosMachine.init();
     }
 
     /**

@@ -4,6 +4,7 @@ import com.apoptosis.gtmchaos.common.covers.GTMChaosCovers;
 import com.apoptosis.gtmchaos.common.machine.GTMChaosMachine;
 import com.apoptosis.gtmchaos.config.GTMChaosConfig;
 import com.apoptosis.gtmchaos.data.GTMChaosData;
+import com.apoptosis.gtmchaos.data.GTMChaosItems;
 import com.apoptosis.gtmchaos.registrate.GTMChaosRegistrate;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
@@ -36,8 +37,8 @@ public class GTMChaosMod {
     public static final Logger LOGGER = LogManager.getLogger();
 
     public GTMChaosMod() {
-        GTMChaosConfig.init();
-        GTMChaosData.init();
+        GTMChaosMod.init();
+
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::commonSetup);
@@ -55,14 +56,24 @@ public class GTMChaosMod {
         // If we want to use annotations to register event listeners,
         // we need to register our object like this!
         MinecraftForge.EVENT_BUS.register(this);
+
+
+
+    }
+    public static void init() {
         GTMChaosRegistrate.init();
+        GTMChaosConfig.init();
+        GTMChaosData.init();
+        GTMChaosItems.init();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+
         event.enqueueWork(() -> {
             LOGGER.info("Hello from common setup! This is *after* registries are done, so we can do this:");
             LOGGER.info("Look, I found a {}!", GTItems.SYSTEM_ON_CHIP);
         });
+
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {

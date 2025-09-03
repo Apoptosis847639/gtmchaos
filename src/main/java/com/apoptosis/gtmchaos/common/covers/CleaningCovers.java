@@ -15,9 +15,6 @@ import net.minecraft.world.item.ItemStack;
 
 import java.util.Collections;
 
-import static com.gregtechceu.gtceu.api.GTValues.UHV;
-import static com.gregtechceu.gtceu.api.GTValues.UV;
-
 public class CleaningCovers extends CoverBehavior {
     private final ICleanroomProvider DUMMY_CLEANROOM;
 

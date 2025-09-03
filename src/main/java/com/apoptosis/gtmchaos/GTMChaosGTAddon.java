@@ -1,5 +1,6 @@
 package com.apoptosis.gtmchaos;
 
+import com.apoptosis.gtmchaos.common.covers.GTMChaosCovers;
 import com.apoptosis.gtmchaos.registrate.GTMChaosRegistrate;
 import com.gregtechceu.gtceu.api.addon.GTAddon;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
@@ -34,6 +35,11 @@ public class GTMChaosGTAddon implements IGTAddon {
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
         // CustomRecipes.init(provider);
+    }
+
+    @Override
+    public void registerCovers() {
+        GTMChaosCovers.init();
     }
 
     // If you have custom ingredient types, uncomment this & change to match your capability.

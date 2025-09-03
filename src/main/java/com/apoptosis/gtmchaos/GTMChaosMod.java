@@ -1,5 +1,6 @@
 package com.apoptosis.gtmchaos;
 
+import com.apoptosis.gtmchaos.common.covers.GTMChaosCovers;
 import com.apoptosis.gtmchaos.common.machine.GTMChaosMachine;
 import com.apoptosis.gtmchaos.config.GTMChaosConfig;
 import com.apoptosis.gtmchaos.data.GTMChaosData;

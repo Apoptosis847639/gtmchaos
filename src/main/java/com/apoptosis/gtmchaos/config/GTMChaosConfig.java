@@ -23,7 +23,13 @@ public class GTMChaosConfig {
 
     public static class FeatureConfigs {
         @Configurable
-        @Configurable.Comment({" Enables Water Reservoir Hatch"})
+        @Configurable.Comment({" Enables Water Reservoir Hatch "})
         public boolean cobblestoneBus = true;
+        @Configurable
+        @Configurable.Comment({" Enables Cleaning Cover "})
+        public boolean cleaningCover = true;
+        @Configurable
+        @Configurable.Comment({" Enables Sterile Cleaning Cover(Requires GTMUtils) "})
+        public boolean sterileCleaningCover = true;
     }
 }
